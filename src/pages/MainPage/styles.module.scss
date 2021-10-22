@@ -11,8 +11,8 @@
 
     .loadMoreButton {
       background: transparent;
-      color: #6E48AA;
-      border: 3px solid #6E48AA;
+      color: #333;
+      border: 3px solid #333;
       border-radius: 25px;
       height: 50px;
       width: fit-content;
@@ -24,7 +24,7 @@
       margin: 120px 0px 80px;
 
       &:hover {
-        background: #6E48AA;
+        background: #333;
         color: #fff;
       }
     }
@@ -39,7 +39,7 @@
 
       .searchInput {
         background: #fff;
-        border: 3px solid #6E48AA;
+        border: 3px solid #333;
         border-radius: 25px 0px 0px 25px;
         border-right: 0;
         height: 60px;
@@ -58,12 +58,12 @@
 
       .searchButton {
         background: #fff;
-        color: #6E48AA;
+        color: #333;
         font-weight: bold;
         height: 60px;
         width: 150px;
         border-radius: 0px 25px 25px 0px;
-        border: 3px solid #6E48AA;
+        border: 3px solid #333;
         border-left: 0;
         display: flex;
         align-items: center;
@@ -71,8 +71,12 @@
         transition: 300ms all;
         font-size: 1.8rem;
 
+        svg {
+          margin-right: 10px;
+        }
+
         &:hover {
-          background: #6E48AA;
+          background: #333;
           color: #fff;
           cursor: pointer;
         }
@@ -120,9 +124,9 @@
           color: #999;
         }
 
-        .highlightedPostFooter {
+        // .highlightedPostFooter {
 
-        }
+        // }
       }
     }
 
