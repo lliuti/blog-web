@@ -61,6 +61,8 @@
       align-items: stretch;
       margin-bottom: 125px;
       text-decoration: none;
+      transition: 300ms all;
+      border-radius: 25px;
 
       .highlightedPostGradient {
         background: linear-gradient(100deg, #9D50BB, #6E48AA);
@@ -71,7 +73,6 @@
       }      
 
       .highlightedPostContent {
-        // padding: ;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
