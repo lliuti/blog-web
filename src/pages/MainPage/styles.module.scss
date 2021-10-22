@@ -16,7 +16,7 @@
 
       .searchInput {
         background: #fff;
-        border: 3px solid #415D78;
+        border: 3px solid #6E48AA;
         border-radius: 25px 0px 0px 25px;
         border-right: 0;
         height: 60px;
@@ -26,6 +26,7 @@
         justify-content: flex-start;
         padding: 0px 25px;
         font-size: 1.8rem;
+        outline: 0;
 
         &::placeholder {
           color: #666;
@@ -34,12 +35,12 @@
 
       .searchButton {
         background: #fff;
-        color: #415D78;
+        color: #6E48AA;
         font-weight: bold;
         height: 60px;
         width: 150px;
         border-radius: 0px 25px 25px 0px;
-        border: 3px solid #415D78;
+        border: 3px solid #6E48AA;
         border-left: 0;
         display: flex;
         align-items: center;
@@ -48,7 +49,7 @@
         font-size: 1.8rem;
 
         &:hover {
-          background: #415D78;
+          background: #6E48AA;
           color: #fff;
           cursor: pointer;
         }
@@ -120,13 +121,13 @@
 
         &:last-child {
           .postGradient {
-            background: linear-gradient(100deg, #4b6cb7, #182848);
+            background: linear-gradient(90deg, #4b6cb7, #182848);
           }
         }
 
         &:first-child {
           .postGradient {
-            background: linear-gradient(100deg, #FBD3E9, #BB377D);
+            background: linear-gradient(45deg, #FBD3E9, #BB377D);
           }
         }
 
