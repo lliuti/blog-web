@@ -9,10 +9,33 @@
     justify-content: flex-start;
     padding: 0px 300px 120px;
 
+    .loadMoreButton {
+      background: transparent;
+      color: #6E48AA;
+      border: 3px solid #6E48AA;
+      border-radius: 25px;
+      height: 50px;
+      width: fit-content;
+      padding: 0px 25px;
+      font-size: 1.8rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 300ms all;
+      margin: 120px 0px 80px;
+
+      &:hover {
+        background: #6E48AA;
+        color: #fff;
+      }
+    }
+
     .form {
       display: flex;
       flex-direction: row;
-      margin: 125px 0px; 
+      margin: 125px 0px;
+      align-items: center;
+      width: 100%;
+      justify-content: center;
 
       .searchInput {
         background: #fff;
@@ -20,7 +43,7 @@
         border-radius: 25px 0px 0px 25px;
         border-right: 0;
         height: 60px;
-        width: 600px;
+        width: 76%;
         display: flex;
         align-items: center;
         justify-content: flex-start;
