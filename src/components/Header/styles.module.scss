@@ -6,37 +6,29 @@
   padding: 20px 30px;
   box-shadow: 5px 0px 10px #ccc;
 
-  .signInButton {
-    color: #6E48AA;
+  .signInWithGithubButton {
     background: transparent;
-    border: none;
+    border: 3px solid #333;
     font-size: 2rem;
     font-weight: bold;
     margin-right: 40px;
     cursor: pointer;
     transition: 300ms all;
-    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 30px;
+    border-radius: 25px;
+
+    svg {
+      margin-right: 15px;
+    }
+
     &:hover {
-      filter: brightness(0.9);
+      border: 3px solid #333;
+      background: #333;
+      color: #fff;
     }
   } 
 
-  .signUpButton {
-    background: transparent;
-    color: #6E48AA;
-    border: 3px solid #6E48AA;
-    border-radius: 25px;
-    height: 50px;
-    width: fit-content;
-    padding: 0px 25px;
-    font-size: 1.8rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 300ms all;
-
-    &:hover {
-      background: #6E48AA;
-      color: #fff;
-    }
-  }
 }
