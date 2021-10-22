@@ -1,3 +1,4 @@
+import { RiSearchLine } from "react-icons/ri"
 import { useEffect, useState } from "react";
 import { Header } from "../../components/Header";
 import { api } from "../../services/api";
@@ -29,7 +30,10 @@ export function MainPage() {
       <div className={styles.contentWrapper}>
         <form className={styles.form}>
           <input className={styles.searchInput} type="text" placeholder="SEARCH POST" />
-          <button className={styles.searchButton}>SEARCH</button>
+          <button className={styles.searchButton}>
+            <RiSearchLine size={24} />
+            SEARCH
+          </button>
         </form>
         <a href="#" className={styles.highlightedPost}>
           <div className={styles.highlightedPostGradient} />
