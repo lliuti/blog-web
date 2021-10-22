@@ -134,6 +134,27 @@
       .post {
         text-decoration: none;
 
+        .postContent {
+          padding: 0px 10px;
+
+          .postFooter {
+            margin-bottom: 08px;
+          }
+  
+          h3 {
+            font-size: 3.4rem;
+            color: #333;
+            max-width: 320px;
+            margin-bottom: 08px;
+          }
+  
+          p {
+            max-width: 320px;
+            font-size: 2.0rem;
+            color: #666;
+          }
+        }
+
         .postGradient {
           width: 320px;
           height: 240px;
@@ -154,22 +175,7 @@
           }
         }
 
-        .postFooter {
-          margin-bottom: 08px;
-        }
-
-        h3 {
-          font-size: 3.4rem;
-          color: #333;
-          max-width: 320px;
-          margin-bottom: 08px;
-        }
-
-        p {
-          max-width: 320px;
-          font-size: 2.0rem;
-          color: #666;
-        }
+        
       }
     }
 
