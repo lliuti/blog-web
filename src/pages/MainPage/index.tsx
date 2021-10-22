@@ -48,9 +48,11 @@ export function MainPage() {
               return (
                 <a href="#" className={styles.post}>
                   <div className={styles.postGradient} />
-                  <div className={styles.postFooter}></div>
-                  <h3>{post.title}</h3>
-                  <p>{post.description}</p>
+                  <div className={styles.postContent}>
+                    <div className={styles.postFooter}></div>
+                    <h3>{post.title}</h3>
+                    <p>{post.description}</p>
+                  </div>
                 </a>
               )
             })
