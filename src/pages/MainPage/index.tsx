@@ -14,19 +14,73 @@ interface IPost {
   title: string;
 }
 
+interface IAuthResponse {
+  token: string;
+  user: {
+    id: string;
+    name: string;
+    github_username: string;
+    avatar_url: string;
+  };
+}
+
+interface IUser {
+  id: string;
+  name: string;
+  github_username: string;
+  avatar_url: string;
+}
+
 export function MainPage() {
   const [recentPosts, setRecentPosts] = useState<IPost[]>([]);
+  const [user, setUser] = useState<IUser>();
+  const [logged, setLogged] = useState(false);
 
   useEffect(() => {
-    const response = api.get<IPost[]>("/posts/recent").then((response) => {
-      setRecentPosts(response.data);
-    });
+    verifyLogged();
+    loadPosts();
+    verifyGithubCode();
   }, [])
 
+  const loadPosts = async () => {
+    const response = await api.get<IPost[]>("/posts/recent");
+    setRecentPosts(response.data);
+  };
+
+  const verifyGithubCode = () => {
+    const url = window.location.href;
+
+    const hasCode = url.includes("?code=");
+
+    if (hasCode) {
+      const [emptyUrl, code] = url.split("?code=");
+      window.history.pushState({}, "", emptyUrl);
+      signIn(code);
+    }
+  }
+
+  const signIn = async (code: string) => {
+    const response = await api.post<IAuthResponse>("/auth/github", {
+      code
+    });
+    const { token, user } = response.data;
+
+    localStorage.setItem("user:token", token);
+    setUser(user);
+  }
+
+  const verifyLogged = () => {
+    setLogged(false);
+    const token = localStorage.getItem("user:token");
+
+    if (token) {
+      setLogged(true);
+    }
+  }
 
   return (
     <div className={styles.mainPageWrapper}>
-      <Header />
+      <Header isLogged={logged} />
       <div className={styles.contentWrapper}>
         <form className={styles.form}>
           <input className={styles.searchInput} type="text" placeholder="SEARCH POST" />
@@ -50,7 +104,7 @@ export function MainPage() {
           {
             recentPosts.map((post) => {
               return (
-                <a href="#" className={styles.post}>
+                <a key={post.id} href="#" className={styles.post}>
                   <div className={styles.postGradient} />
                   <div className={styles.postContent}>
                     <div className={styles.postFooter}></div>
