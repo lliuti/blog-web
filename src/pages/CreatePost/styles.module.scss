@@ -1,0 +1,47 @@
+.createPostWrapper {
+  padding: 20px; 
+
+  .titleInput {
+    height: 60px;
+    width: 100%;
+    padding: 0px 20px;
+    font-size: 2.6rem;
+    margin-bottom: 10px;
+    border: 1px solid #f5f5f5;
+    box-shadow: 5px 5px 5px rgb(204, 204, 204, 1);
+    outline: none;
+  }
+
+  .descriptionInput {
+    height: 60px;
+    width: 100%;
+    padding: 0px 20px;
+    font-size: 2.6rem;
+    margin-bottom: 10px;
+    border: 1px solid #f5f5f5;
+    box-shadow: 5px 5px 5px rgb(204, 204, 204, 1);
+    outline: none;
+  }
+
+  .contentTextarea {
+    width: 100%;
+    border: 1px solid #f5f5f5;
+    box-shadow: 5px 5px 5px rgb(204, 204, 204, 1);
+    outline: none;
+    padding: 20px;
+    font-size: 2.6rem;
+    flex: 1 1;
+    resize: vertical;
+    min-height: 70vh;
+
+    &::-webkit-scrollbar {
+      width: 8px;
+      background-color: #333;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #9D50BB;
+      border-radius: 10px;
+    }
+  }
+}
