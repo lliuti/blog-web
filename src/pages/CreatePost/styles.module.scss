@@ -13,6 +13,10 @@
     border: 1px solid #f5f5f5;
     box-shadow: 5px 5px 5px rgb(204, 204, 204, 1);
     outline: none;
+    
+    &:focus-within {
+      outline: 2px solid #666;
+    }
   }
 
   .descriptionInput {
@@ -24,6 +28,10 @@
     border: 1px solid #f5f5f5;
     box-shadow: 5px 5px 5px rgb(204, 204, 204, 1);
     outline: none;
+    
+    &:focus-within {
+      outline: 2px solid #666;
+    }
   }
 
   .contentTextarea {
@@ -35,6 +43,10 @@
     font-size: 2.6rem;
     flex: 1;
     resize: vertical;
+
+    &:focus-within {
+      outline: 2px solid #666;
+    }
 
     &::-webkit-scrollbar {
       width: 8px;
