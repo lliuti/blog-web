@@ -46,6 +46,10 @@ export function CreatePost() {
       }
     })
 
+    if (response.status == 201) {
+      history.push("/");
+    }
+
     console.log(response);
   }
 
