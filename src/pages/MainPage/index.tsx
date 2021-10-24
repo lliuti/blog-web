@@ -24,16 +24,9 @@ interface IAuthResponse {
   };
 }
 
-interface IUser {
-  id: string;
-  name: string;
-  github_username: string;
-  avatar_url: string;
-}
-
 export function MainPage() {
   const [recentPosts, setRecentPosts] = useState<IPost[]>([]);
-  const [user, setUser] = useState<IUser>();
+  const [lastPost, setLastPost] = useState<IPost>();
   const [logged, setLogged] = useState(false);
 
   useEffect(() => {
@@ -43,8 +36,11 @@ export function MainPage() {
   }, [])
 
   const loadPosts = async () => {
-    const response = await api.get<IPost[]>("/posts/recent");
-    setRecentPosts(response.data);
+    const lastPostResponse = await api.get<IPost>("/posts/last");
+    setLastPost(lastPostResponse.data);
+
+    const recentPostsResponse = await api.get<IPost[]>("/posts/recent");
+    setRecentPosts(recentPostsResponse.data);
   };
 
   const verifyGithubCode = () => {
@@ -66,7 +62,6 @@ export function MainPage() {
     const { token, user } = response.data;
 
     localStorage.setItem("user:token", token);
-    setUser(user);
   }
 
   const verifyLogged = () => {
@@ -81,21 +76,20 @@ export function MainPage() {
     <div className={styles.mainPageWrapper}>
       <Header />
       <div className={styles.contentWrapper}>
-        <form className={styles.form}>
+        {/* <form className={styles.form}>
           <input className={styles.searchInput} type="text" placeholder="SEARCH POST" />
           <button className={styles.searchButton}>
             <RiSearchLine size={24} />
             SEARCH
           </button>
-        </form>
+        </form> */}
         <a href="#" className={styles.highlightedPost}>
           <div className={styles.highlightedPostGradient} />
           <div className={styles.highlightedPostContent}>
-            <h3>Lorem ipsum dolor sit amet</h3>
-            <p>Lorem ipsum dolor sit amet, lorem ipsum dolor sit Amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, lorem ipsum dolor sit Amet. Lorem ipsum dolor sit amet.</p>
-            <span>21/10/2021</span>
+            <h3>{lastPost?.title}</h3>
+            <p>{lastPost?.description}</p>
+            <span>{lastPost?.created_at}</span>
             <div className={styles.highlightedPostFooter}>
-
             </div>
           </div>
         </a>
