@@ -5,7 +5,6 @@
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: flex-start;
     padding: 0px 300px 120px;
 
@@ -22,6 +21,7 @@
       cursor: pointer;
       transition: 300ms all;
       margin: 120px 0px 80px;
+      align-self: center;
 
       &:hover {
         background: #333;
@@ -87,7 +87,7 @@
       display: flex;
       flex-direction: row;
       align-items: stretch;
-      margin-bottom: 125px;
+      margin: 100px 0px;
       text-decoration: none;
       transition: 300ms all;
       border-radius: 25px;
@@ -110,12 +110,14 @@
           font-size: 4.2rem;
           color: #333;
           max-width: 600px;
+          word-break: break-word;
         }
 
         p {
           max-width: 600px;
           font-size: 2.8rem;
           color: #666;
+          word-break: break-word;
         }
 
         span {
@@ -150,12 +152,14 @@
             color: #333;
             max-width: 320px;
             margin-bottom: 08px;
+            word-break: break-word;
           }
   
           p {
             max-width: 320px;
             font-size: 2.0rem;
             color: #666;
+            word-break: break-word;
           }
         }
 
