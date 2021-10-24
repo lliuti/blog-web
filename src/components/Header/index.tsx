@@ -33,8 +33,6 @@ export function Header() {
 
   const token = localStorage.getItem("user:token");
 
-  console.log(location.pathname);
-
   if (token) {
     if (location.pathname == "/post/create") {
       button =
