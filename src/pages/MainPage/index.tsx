@@ -72,15 +72,14 @@ export function MainPage() {
   const verifyLogged = () => {
     setLogged(false);
     const token = localStorage.getItem("user:token");
-
     if (token) {
       setLogged(true);
     }
-  }
+  };
 
   return (
     <div className={styles.mainPageWrapper}>
-      <Header isLogged={logged} />
+      <Header />
       <div className={styles.contentWrapper}>
         <form className={styles.form}>
           <input className={styles.searchInput} type="text" placeholder="SEARCH POST" />
